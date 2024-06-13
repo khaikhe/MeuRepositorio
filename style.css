@@ -1,0 +1,523 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #e8e4e4;
+}
+
+header {
+    background: #e9dfdf;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 50px 20px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+body {
+    background-image: linear-gradient(to top, #cdc2df, #bb6acb);
+    background-size: cover;
+    background-position: center; 
+}
+#animated-text {
+    opacity: 4;
+    transition: opacity 5s ease; /* Adicione uma transição suave */
+}
+#home {
+    background: url('image/banerStar.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+/* Adicione a classe jumping-text */
+.jumping-text {
+        
+        font-size: 30px;
+        font-family: 'Bungee Spice', cursive; /* Aplica a fonte Bungee Spice */
+        position: relative; /* Define a posição relativa para permitir o posicionamento dos pseudoelementos */
+        color: transparent;
+    
+      
+    position: absolute;
+    top: 30%; /* Coloca o topo do texto no meio da tela */
+    left: 30%; /* Coloca a esquerda do texto no meio da tela */
+    transform: translate(-50%, -50%); /* Move o texto para o centro da tela */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 1.5; /* Define o espaçamento entre as linhas */
+    max-width: 50%; /* Define a largura máxima do texto */
+}
+.jumping-text::after {
+    content: attr(data-text); /* Define o conteúdo do pseudoelemento como o texto original */
+    position: absolute; /* Define a posição absoluta para permitir o posicionamento individual */
+    top: 0; /* Alinha o topo do pseudoelemento com o topo do elemento pai */
+    left: 0; /* Alinha a esquerda do pseudoelemento com a esquerda do elemento pai */
+    width: 100%; /* Define a largura do pseudoelemento igual à largura do elemento pai */
+    height: 100%; /* Define a altura do pseudoelemento igual à altura do elemento pai */
+    background-image: linear-gradient(to top, #FACCFF,#DCB0FF,#BE93FD,#A178DF); /* Define o degradê de roxo escuro a roxo claro */
+    -webkit-background-clip: text; /* Define o background-clip para o texto */
+    background-clip: text; /* Para navegadores que não suportam o prefixo -webkit- */
+    color: transparent; /* Torna o texto invisível para que apenas o degradê seja visível */
+}
+@keyframes float {
+    0% {
+        transform: translateY(0); /* O texto começa na posição normal */
+    }
+    50% {
+        transform: translateY(-10px); /* O texto sobe um pouco */
+    }
+    100% {
+        transform: translateY(0); /* O texto volta para a posição normal */
+    }
+}
+
+
+
+.jumping-img {
+    animation: jump 1s infinite alternate; /* Define a animação "jump" */
+    position: absolute;
+    max-width: 20%; /* Tamanho máximo da imagem */
+    max-height: 50%; /* Tamanho máximo da imagem */
+    top: 300px; /* Posicionamento top */
+    right: 150px; /* Posicionamento right */
+    z-index: 1; /* Ajuste o z-index conforme necessário */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+
+@keyframes jump {
+    0% {
+        transform: translateY(0); /* A imagem começa na posição normal */
+    }
+    100% {
+        transform: translateY(-40px); /* A imagem pula para cima */
+    }
+}
+
+#home .text {
+    flex: 1;
+    text-align: top;
+    max-width: 600px;
+}
+
+#home .image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#home .image img {
+    max-width: 50%;
+    height: auto;
+}
+
+#projects {
+    background-image: linear-gradient(to right top, #4c238e, #eac8e8);
+    margin-right: auto;
+    padding: 20px;
+}
+
+.project {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 5px groove black;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.project-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 1px;
+    position: relative;
+    width: 100%;
+}
+
+.project-image {
+    
+    width: 100%; /* Largura fixa desejada para a imagem */
+    height: 650px; /* Altura fixa desejada para a imagem */
+    object-fit: cover; /* Redimensiona a imagem mantendo a proporção e cobrindo a área especificada */
+    border-radius: 10px; /* Opcional: define um raio de borda para a imagem */
+    transition: opacity 1s ease-in-out;
+
+}
+
+
+.tecnologia-usada {
+    font-family: 'Bungee Spice', cursive; /* Aplica a fonte Bungee Spice */
+    background: linear-gradient(to right, #4B0082, #9370DB); /* Define um degradê de roxo escuro (#4B0082) a roxo claro (#9370DB) */
+    -webkit-background-clip: text; /* Define o background-clip para o texto */
+    -webkit-text-fill-color: transparent; /* Define a cor do texto como transparente */
+    background-clip: text; /* Para navegadores que não suportam o prefixo -webkit- */
+    
+    font-size: 25px;
+    position: absolute;
+    top: 20%; /* Coloca o topo do texto no meio da tela */
+    left: 80%; /* Coloca a esquerda do texto no meio da tela */
+    transform: translate(-50%, -50%); /* Move o texto para o centro da tela */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 1.5; /* Define o espaçamento entre as linhas */
+    max-width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .tecnologia-usada {
+        font-size: 20px;
+    }
+}
+
+
+
+.project-image:first-child {
+    display: block;
+}
+
+.project-logos {
+    top: 30%;
+    display: flex;
+    flex: 1 1 45%;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgba(255, 255, 255, 0.2); /* Quase invisível */
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease, color 0.6s ease, transform 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo quase invisível */
+    border-radius: 0 3px 3px 0;
+}
+
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.project-logos img {
+    max-width: 600px;
+    height: auto;
+    border: 0px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+.project-logos img.diferente2 {
+    
+    flex-wrap: wrap;
+    display: flex;
+    max-height: 20%;
+    margin-top: 50px;
+    width: 700px; /* Novo tamanho para a imagem logos React */
+    height: 200px;
+
+}
+.project-logos img.diferente {
+    max-width: 40%;
+    flex-wrap: wrap;
+    display: flex;
+    max-height: 50%;
+    align-items: center;
+    justify-content: space-between;
+    object-fit: cover;
+    width: 500px; /* Defina a largura desejada */ /* Novo tamanho para a imagem bonequinho */
+
+
+}
+.project-info p {
+    margin: 10px 0 0 0;
+}
+
+.image-slider {
+    position: relative;
+    max-width: 100%;
+    flex: 1 1 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+    
+}
+
+
+/* Configura imagem de perfil*/
+.image-slider img.sliderperfil{
+    position: relative;
+    max-width: 50%;
+    flex: 1 1 40%;
+    display: flex;
+    max-height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20%;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    object-fit: cover;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 200px; /* Defina a largura desejada */
+    height: 600px; /* Defina a altura desejada */ /* Adiciona sombra à imagem */
+    flex-wrap: wrap;
+
+}
+.enlarged {
+    transform: scale(1.5);
+    transition: transform 0.3s;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .project {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .image-slider {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .project-info {
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .project-image {
+        max-width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;
+    }
+
+    .project-logos {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .project-logos img {
+        max-width: 500px;
+        flex-wrap: wrap;
+    }
+}
+
+.project-logos a {
+    color: #333; /* Cor dos ícones */
+    font-size: 35px; /* Tamanho dos ícones */
+    margin-right: 15px; /* Espaçamento à direita entre os ícones */
+   
+
+
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+.logo-container {
+    margin-bottom: 10px; /* Espaçamento entre a imagem e os ícones sociais */
+    margin-right: 10;
+}
+.social-icons a {
+    color: #333; /* Cor dos ícones */
+    font-size: 24px; /* Tamanho dos ícones */
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: #007bff; /* Cor dos ícones ao passar o mouse */
+}
+#contact {
+
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+
+
+h2 {
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(39, 3, 131, 0.5);
+    font-family: 'Bungee Spice', cursive;
+    background: linear-gradient(to right, #0602e8, #5104eb);
+    text-shadow: 2px 2px 5px rgba(39, 3, 131, 0.5);
+    -webkit-background-clip: text; /* Define o background-clip para o texto */
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+    position: relative;
+    top: -20%; /* Coloca o topo do texto no meio da tela */
+    left: 42%;
+    flex-wrap: wrap;
+
+}
+h3 {
+font-family: 'Bungee Spice', cursive;
+background: linear-gradient(to right, #0602e8, #5104eb);
+text-shadow: 2px 2px 5px rgba(39, 3, 131, 0.5);
+-webkit-background-clip: text; /* Define o background-clip para o texto */
+-webkit-text-fill-color: transparent;
+text-align: center;
+color: #7f0588;
+font-size: 45px;
+position: relative;
+top: -320px; /* Coloca o topo do texto no meio da tela */
+left: -500px;
+flex-wrap: wrap;
+}
+h4 {
+    font-size: 15px;
+    position: absolute;
+    top: 80%; /* Coloca o topo do texto no meio da tela */
+    left: 80%; /* Coloca a esquerda do texto no meio da tela */
+    transform: translate(-50%, -50%); /* Move o texto para o centro da tela */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 1.5; /* Define o espaçamento entre as linhas */
+    max-width: 50%;
+    flex-wrap: wrap;
+    text-shadow: 2px 2px 5px rgba(129, 6, 170, 0.5);
+    }
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+    
+}
+.profile-photo {
+    position: relative; /* Permite posicionamento preciso */
+    top: -80px;          /* Ajuste para mover a imagem para baixo */
+    left: -60%;
+    width: 700px;
+    height: 600px;
+    border-radius: 20%;
+    margin-right: 20px;
+    object-fit: cover;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adiciona sombra à imagem */
+    flex-wrap: wrap;
+}
+
+.profile-text {
+    max-width: 600px;
+    flex-wrap: wrap;
+}
+
+.small-photo {
+    width: 350px;
+    height: 300px;
+    position: relative;
+    left: -390px;
+    flex-wrap: wrap;
+    
+    
+}
+
+.medium-photo {
+    width: 450px;
+    height: 450px;
+    position: relative;
+    left: -200px;
+    top: -160px;
+    flex-wrap: wrap;
+    
+   
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px)
+ {
+    header nav a {
+        display: block;
+        margin: 10px 0;
+    }
+ 
+
+    form input, form textarea {
+        width: 100%;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
