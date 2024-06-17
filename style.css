@@ -2,12 +2,12 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #e8c6f0;
     color: #333;
 }
 
 header {
-    background: #e9dfdf;
+    background: #a311d4;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -19,7 +19,7 @@ header {
 }
 
 header nav a {
-    color: #fff;
+    color: #a028dc;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -47,7 +47,7 @@ section {
 }
 
 .jumping-text {
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Bungee Spice', cursive;
     position: relative;
     color: transparent;
@@ -67,7 +67,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to top, #FACCFF, #DCB0FF, #BE93FD, #A178DF);
+    background-image: linear-gradient(to top, #FACCFF, #c1b9c8, #d1bfed, #c8b9df);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -106,7 +106,79 @@ section {
         transform: translateY(-40px);
     }
 }
+form {
+    display: flex;
+    flex-direction: column;
+}
 
+form label {
+    margin-top: 5px;
+
+}
+
+form input, form textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+form button {
+    margin-top: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Limita a largura do formulário */
+    margin-right: 100px;
+}
+
+form label {
+    border-radius: 50px; /* Define um raio de 5 pixels para os cantos das labels */
+    padding: 5px 10px; /* Adiciona um preenchimento interno para destacar a arredondagem */
+    display: inline-block; /* Garante que o border-radius seja aplicado corretamente */
+    margin-top: -30px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 10px 10px;
+    background-color: #3d0754;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -20px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+.form-container {
+    flex-grow: 1; /* Faz o formulário ocupar o espaço restante */
+}
+.label-email {
+    font-family: 'Poppins', sans-serif;
+    /* Outros estilos opcionais */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #333; /* Cor do texto */
+}
+.label-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #333; /* Cor do texto */
+}
 #home .text {
     text-align: center;
     max-width: 600px;
@@ -126,7 +198,7 @@ section {
 }
 
 .project {          /* Ajuste seção tecnologias */
-    background: #fff;
+    background: #d0a3ea;
     color: #333;
     margin: 20px;
     padding: 20px;
@@ -135,8 +207,16 @@ section {
     max-width: 400px;
     flex: 1;
 }
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #3d0754;
+    
+}
+
 .projetct2{             /* Ajusta seção contatos */
-    background: #fff;
+    background: #d0a3ea;
     color: #333;
     margin: 20px;
     padding: 20px;
@@ -144,22 +224,35 @@ section {
     box-shadow: 0 4px 8px rgba(15, 5, 5, 0.2);
     max-width: 100%;
     flex: 1;
+    flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
+    justify-content: right; /* Centraliza os elementos verticalmente */
+    align-items: normal; /* Centraliza os elementos horizontalmente */
 }
+.project-info2{
+    display: flex;
+    align-items: flex-start;
+    }
+
 .imagem-perfil img {
     position: relative;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 70%; /* Define a largura da imagem */
+    border-radius: 20px; /* Arredonda os cantos da imagem */
+    box-shadow: 0 10px 15px rgba(131, 4, 174, 0.2); /* Adiciona uma sombra sutil */
 }
 .project-contato{
     display: flex;
     flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
-    justify-content: center; /* Centraliza os elementos verticalmente */
-    align-items: center; /* Centraliza os elementos horizontalmente */
+    justify-content: right; /* Centraliza os elementos verticalmente */
+    align-items: normal; /* Centraliza os elementos horizontalmente */
     margin-top: 10px;
 
 }
 .project-contato img{
-    max-width: 90%;
-    height: auto;
+    max-width: 50%;
+    height: 100px;
     margin-right: 10px;
 
 }
@@ -171,15 +264,14 @@ section {
 }
 
 .diferente {        /* Ajusta imagem do contato */
-    width: 100%;
-    height: 30%;
-    display: none;
+    margin: 20px;
+    padding: 20px;
+    max-width: 100%;
+    max-height: 300px;
+    flex: 1;
+
 }
 
-
-.project-info {
-    text-align: left;
-}
 
 .image-slider {
     position: relative;
@@ -239,16 +331,15 @@ section {
 .tecnologia-usada h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #3d0754;
+    
 }
 
 .project-logos img {
     max-width: 90%;
     height: auto;
     margin-right: 10px;
-}
-
-.diferente {
-    max-width: 200px;
 }
 
 .project-logos {
