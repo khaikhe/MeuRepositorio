@@ -1,33 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const projects = document.querySelectorAll('.project');
+    const sliders = document.querySelectorAll('.image-slider');
 
-    projects.forEach(project => {
-        const images = project.querySelectorAll('.image-slider .project-image');
-        let currentImageIndex = 0;
+    sliders.forEach(slider => {
+        const images = slider.querySelectorAll('.project-image');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+        let currentIndex = 0;
 
         function showImage(index) {
-            images[currentImageIndex].style.display = 'none';
-            currentImageIndex = index;
-            images[currentImageIndex].style.display = 'block';
+            images.forEach((img, i) => {
+                if (i === index) {
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
         }
 
-        project.querySelector('.prev').addEventListener('click', function() {
-            showImage((currentImageIndex - 1 + images.length) % images.length);
+        // Exibe a primeira imagem ao carregar a página
+        showImage(currentIndex);
+
+        prevBtn.addEventListener('click', () => {
+            images[currentIndex].classList.remove('enlarged'); // Remove a classe enlarged da imagem atual antes de mudar o índice
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            showImage(currentIndex);
         });
 
-        project.querySelector('.next').addEventListener('click', function() {
-            showImage((currentImageIndex + 1) % images.length);
-        });
-        document.addEventListener("DOMContentLoaded", function() {
-            // Quando a página carregar, adicione a classe que define a opacidade como 1
-            document.getElementById("animated-text").style.opacity = "1";
+        nextBtn.addEventListener('click', () => {
+            images[currentIndex].classList.remove('enlarged'); // Remove a classe enlarged da imagem atual antes de mudar o índice
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            showImage(currentIndex);
         });
 
+        // Evento de clique na imagem para expandir/voltar ao tamanho original
         images.forEach(img => {
-            img.addEventListener('click', function() {
+            img.addEventListener('click', () => {
                 img.classList.toggle('enlarged');
             });
-            
         });
     });
 });
