@@ -2,12 +2,12 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #e8c6f0;
     color: #333;
 }
 
 header {
-    background: #e9dfdf;
+    background: #a311d4;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -19,7 +19,7 @@ header {
 }
 
 header nav a {
-    color: #fff;
+    color: #a028dc;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -47,7 +47,7 @@ section {
 }
 
 .jumping-text {
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Bungee Spice', cursive;
     position: relative;
     color: transparent;
@@ -67,7 +67,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to top, #FACCFF, #DCB0FF, #BE93FD, #A178DF);
+    background-image: linear-gradient(to top, #FACCFF, #c1b9c8, #d1bfed, #c8b9df);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
