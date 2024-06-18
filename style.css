@@ -445,16 +445,17 @@ h1 {
         flex-direction: column;
     }
     .jumping-text {
-        font-size: 24px;
+        font-size: 15px;
         top: 40%;
         left: 50%;
         max-width: 80%;
     }
     .jumping-img {
         position: relative;
-        max-width: 50%;
-        margin-top: 20px;
+        max-width: 20%;
+        margin-top: 80%;
         right: 50%;
+
     }
     .project {
         max-width: 90%;
@@ -464,7 +465,7 @@ h1 {
 
 @media (max-width: 480px) {
     .jumping-text {
-        font-size: 18px;
+        font-size: 12px;
     }
     #home .text {
         margin-top: 50px; /* Ajuste conforme necessário */
