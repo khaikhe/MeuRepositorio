@@ -101,7 +101,7 @@ section {
     position: relative;
     max-width: 80%;
     max-height: 50%;
-    left: 80%;
+    left: 50%;
     z-index: 0; /* Change to ensure it does not overlap important elements */
     display: flex;
     justify-content: center;
@@ -314,7 +314,6 @@ h1 {
     position: relative;
     display: flex;
     max-width: 200px;
-    margin-left: 20%;
 
 }
 .project-contato img{
