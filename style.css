@@ -457,6 +457,11 @@ h1 {
         right: 50%;
 
     }
+
+    .link-estilizado a { 
+        color: blue;
+        text-decoration: underline;
+      }
     .project {
         max-width: 90%;
         margin: 10px auto;
