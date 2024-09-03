@@ -2,13 +2,13 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #e8c6f0;
+    background: url('image/codigox.jpg') no-repeat center center/cover;
     color: #333;
     margin: 0 auto;
     padding: 1px;
     box-sizing: border-box;
     overflow-x: hidden;
-    max-width: 2500px;
+
 
 }
     .video-container {
@@ -116,59 +116,6 @@ section.fade-in {
     }
 }
 
-.jumping-text {
-    animation: jump 1s ease-in-out infinite;
-}
-
-#home {
-    background: url('image/banerStar.png') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    position: relative;
-    overflow: hidden;
-}
-#home::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    filter: blur(5px);
-    z-index: -1; /* Coloca o desfoque atrás do conteúdo */
-}
-
-.jumping-text {
-    font-size: 20px;
-    font-family: 'Bungee Spice', cursive;
-    position: relative;
-    color: transparent;
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    line-height: 1.5;
-    max-width: 50%;
-}
-
-.jumping-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to top, #FACCFF, #c1b9c8, #d1bfed, #c8b9df);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
 
 @keyframes float {
     0% {
@@ -186,13 +133,18 @@ section.fade-in {
     animation: jump 1s infinite alternate;
     position: relative;
     max-width: 80%;
-    max-height: 50%;
-    left: 50%;
-    z-index: 0; /* Change to ensure it does not overlap important elements */
+    max-height: 70%;
+    left: auto; /* Remova o alinhamento à esquerda */
+    right: 0;  /* Posiciona à direita */
+    z-index: 0; /* Certifique-se de que não sobreponha elementos importantes */
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Alinha o conteúdo interno à direita */
     gap: 10px;
+    margin-left: 65%; /* Centraliza em relação ao contêiner pai */
+    margin-right: auto;  /* Remove margem à direita para alinhar completamente à direita */
 }
+
+
 
 @keyframes jump {
     0% {
@@ -279,16 +231,19 @@ form button:hover {
 }
 
 
-.project {          /* Ajuste seção tecnologias */
-    background: #d0a3ea;
+.project {
+    background: #e4dbf3;
     color: #333;
-    margin: 20px;
+    margin: 20px auto; /* Centraliza horizontalmente */
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 550px;
-    flex: 1;
+    max-width: 60%; /* Limita a largura máxima */
+    display: flex;
+    flex-direction: column; /* Para flexibilidade em layouts menores */
+    align-items: center; /* Centraliza o conteúdo dentro do contêiner */
+    border-radius: 15px; /* Adiciona cantos arredondados */
 }
+
 .project
 h1 {
     justify-content: center; 
@@ -301,10 +256,10 @@ h1 {
 }
 .project h4 {
     font-size: 15px;
-    color: #59058e;
-    text-shadow: 2px 2px 4px rgba(149, 10, 196, 0.5);
+    color: #151415;
     justify-content: center; 
     display: flex;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -319,16 +274,6 @@ h1 {
     width: 80%;
     margin-top: -50px;
 
-}
-.imagem-perfil h4{
-    font-size: 15px;
-    color: #59058e;
-    text-shadow: 2px 2px 4px rgba(149, 10, 196, 0.5);
-    width: 80%;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: -0px;
-    
 }
 
 .project-contato{
@@ -440,41 +385,31 @@ h1 {
     .container {
         flex-direction: column;
     }
-    #projects2 .project-container {
-        flex-direction: column;
-    }
-    .jumping-text {
-        font-size: 15px;
-        top: 40%;
-        left: 50%;
-        max-width: 80%;
-    }
-    .jumping-img {
-        position: relative;
-        max-width: 20%;
-        margin-top: 80%;
-        right: 50%;
-
-    }
 
     .link-estilizado a { 
         color: blue;
         text-decoration: underline;
       }
-    .project {
-        max-width: 90%;
-        margin: 10px auto;
-    }
+        .project {
+            max-width: 80%; /* Ajusta a largura em telas menores */
+            margin: 10px auto; /* Ajusta o espaçamento */
+            padding: 15px;
+        }
+    
 }
 
+
 @media (max-width: 480px) {
-    .jumping-text {
-        font-size: 12px;
-    }
+
     #home .text {
         margin-top: 50px; /* Ajuste conforme necessário */
     }
     .jumping-img {
         max-width: 70%;
+    }
+    .project {
+        max-width: 100%; /* Ocupa toda a largura em dispositivos muito pequenos */
+        margin: 5px auto; /* Ajusta o espaçamento */
+        padding: 10px;
     }
 }
