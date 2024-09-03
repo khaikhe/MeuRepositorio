@@ -33,11 +33,41 @@ body {
         margin:  10px;
         
     }
+
+    i {
+        font-size: 24px; /* Tamanho dos ícones, ajuste conforme necessário */
+        color: #333; /* Cor padrão dos ícones, ajuste conforme necessário */
+        transition: color 0.3s; /* Transição suave para mudança de cor */
+        
+    }
+    a[href*="github.com"] i {
+        font-size: 30px; /* Tamanho do ícone */
+        color: black; /* Cor preta para o ícone do GitHub */
+        margin-right: 15px; /* Espaçamento à direita */
+        margin-left: 240px;
+    }
+    a[href*="linkedin.com"] i {
+        font-size: 30px; /* Tamanho do ícone */
+        color: #0077b5; /* Cor azul para o ícone do LinkedIn (cor oficial do LinkedIn) */
+        
+    }
     
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column; /* Faz o eixo principal ser vertical */
+    justify-content: space-around;
+  
+}
+.project .video-container .image-slider {
+    flex: 1; /* A imagem ocupa uma parte do espaço */
+}
+.project .h4 .project-logos {
+    flex: 2; /* O texto e as logos ocupam o espaço restante */
+    display: flex;
+    flex-direction: column; /* Mantém o texto e as logos em coluna */
+    justify-content: space-around; /* Espaçamento entre texto e logos */
 }
 .link-estilizado {
     color: blue !important; /* Garante que o link tenha a cor azul */
@@ -61,32 +91,56 @@ header {
     z-index: 1000;
 }
 
-header nav a {
-    color: #a028dc;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-header nav a:hover {
-    text-decoration: underline;
-}
 
 section {
-    padding: 50px 20px;
-    margin-top: 0;
-    text-align: center;
+    opacity: 1; /* Inicialmente invisível */
+    transition: opacity 1s ease-in-out; /* Transição suave */
+    padding: 100px 0; /* Espaçamento entre as seções */
+    position: relative; /* Adiciona contexto para a transição */
+}
+
+section.fade-in {
+    opacity: 0; /* Visível quando a classe fade-in é aplicada */
+}
+
+
+
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.jumping-text {
+    animation: jump 1s ease-in-out infinite;
 }
 
 #home {
     background: url('image/banerStar.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
-    justify-content: center; /* Centraliza os elementos verticalmente */
-    align-items: center; /* Centraliza os elementos horizontalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0 20px;
     position: relative;
+    overflow: hidden;
+}
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1; /* Coloca o desfoque atrás do conteúdo */
 }
 
 .jumping-text {
@@ -148,81 +202,63 @@ section {
         transform: translateY(-40px);
     }
 }
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-top: 5px;
-
-}
-
-form input, form textarea {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
 
 form button {
     margin-top: 10px;
 }
+.form-container {
+    display: flex;
+    justify-content: center; /* Centraliza o formulário horizontalmente */
+    align-items: center; /* Centraliza o formulário verticalmente */
+    padding: 20px; /* Adiciona um pouco de espaçamento ao redor do formulário */
+    box-sizing: border-box; 
+}
 form {
     display: flex;
-    flex-direction: column;
-    max-width: 200px; /* Limita a largura do formulário */
-    margin-right: 100px;
+    flex-direction: column; /* Organiza os elementos do formulário em uma coluna */
+    width: 50%; /* Ajuste conforme necessário */
+    max-width: 500px; /* Limita a largura máxima do formulário */
+    border-radius: 10px;
+    
 }
 
 form label {
-    border-radius: 50px; /* Define um raio de 5 pixels para os cantos das labels */
-    padding: 5px 10px; /* Adiciona um preenchimento interno para destacar a arredondagem */
-    display: inline-block; /* Garante que o border-radius seja aplicado corretamente */
-    margin-top: -30px;
-    margin-left: 100px;
+    display: block; /* Garante que as labels ocupem toda a largura disponível */
+    text-align: center; /* Centraliza o texto dentro das labels */
+    margin-bottom: 10px; /* Espaçamento abaixo das labels, se necessário */
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 350px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-left: 45px;
+form input,
+form textarea {
+    width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+    max-width: 100%; /* Evita que os campos ultrapassem o contêiner */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
 }
 
 form button {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    padding: 10px 10px;
-    background-color: #3d0754;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: -20px;
-    margin-left: 120px;
+    padding: 5px 10px; /* Adiciona preenchimento interno ao botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    background-color: #333; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    cursor: pointer; /* Adiciona um cursor de ponteiro ao passar sobre o botão */
+    margin-top: 10px; /* Espaçamento acima do botão */
 }
-
+input[type="email"],
+textarea {
+    padding: 10px; /* Adiciona preenchimento interno para os campos */
+    border-radius: 5px; /* Arredonda os cantos dos campos */
+    border: 1px solid #ccc; /* Adiciona uma borda aos campos */
+}
 form button:hover {
     background-color: #0056b3;
 }
-.form-container {
-    flex-grow: 1; /* Faz o formulário ocupar o espaço restante */
-}
-.label-email {
+
+.label-email, .label-message {
     font-family: 'Poppins', sans-serif;
-    /* Outros estilos opcionais */
-    font-size: 20px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: #333; /* Cor do texto */
-}
-.label-message {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: #333; /* Cor do texto */
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #333; 
 }
 #home .text {
     text-align: center;
@@ -255,56 +291,23 @@ form button:hover {
 }
 .project
 h1 {
+    justify-content: center; 
+    display: flex;
     font-size: 24px;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
-    color: #3d0754;
+    color: #500470;
     
 }
 .project h4 {
     font-size: 15px;
     color: #59058e;
     text-shadow: 2px 2px 4px rgba(149, 10, 196, 0.5);
-}
-#projects2 {
+    justify-content: center; 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
-}
-#projects2 .project-container {
-    display: flex;
-    flex-direction: row;
-}
-#projects2 .contact-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
-#projects2 .contact-content img {
-    margin-right: 20px;
-}
-#projects2 .project-container {
-    display: flex;
-    flex-direction: row;
-}
-#projects2 .projetct2, #projects2 .project2 {
-    flex: 1;
-    margin: 10px;
-}
 
-.projetct2{             /* Ajusta seção contatos */
-    background: #d0a3ea;
-    color: #333;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 550px;
-    flex: 1;
-    flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
-}
 .contact-content h5 {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
@@ -325,23 +328,9 @@ h1 {
     margin-left: 30px;
     margin-right: 30px;
     margin-bottom: -0px;
+    
 }
-.project-info2{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    }
 
-.imagem-perfil img {
-    position: relative;
-    display: flex;
-    margin-left: 30px;
-    margin-right: 30px;
-    flex-direction: column;
-    width: 80%; /* Define a largura da imagem */
-    border-radius: 20px; /* Arredonda os cantos da imagem */
-    box-shadow: 0 10px 15px rgba(131, 4, 174, 0.2); /* Adiciona uma sombra sutil */
-}
 .project-contato{
     position: relative;
     display: flex;
@@ -354,22 +343,12 @@ h1 {
     margin-right: 50px;
 
 }
-.project-contato h1{
-    font-size: 20px;
-}
-.project-contato2 a {
-    margin: 20px 10px; /* Ajuste conforme necessário */
-    font-size: 40px;
-    color: #333;
-    text-decoration: none;
-}
 
 .diferente {        /* Ajusta imagem do contato */
-    margin: 20px;
-    padding: 20px;
+
     max-width: 100%;
     max-height: 200px;
-    margin-top: -1px
+    margin-top: 20px
 
 }
 
@@ -377,6 +356,7 @@ h1 {
 .image-slider {
     position: relative;
     width: 100%;
+    margin-top: 25px;
     overflow: visible;
     margin-bottom: 20px;
 }
@@ -430,17 +410,6 @@ h1 {
     margin-left: -10px;
 }
 
-.tecnologia-usada h1 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-family: 'Poppins', sans-serif;
-    color: #3d0754;
-    font-size: 2em;
-    color: #cc76e2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    
-}
-
 .project-logos img {
     max-width: 90%;
     height: auto;
@@ -456,13 +425,11 @@ h1 {
 }
 
 
-
-
-.project-logos a:hover {
-    color: #555;
-}
-
 @media (max-width: 768px) {
+    .video-container {
+       
+        flex-direction: column;
+    }
     #home {
         padding: 0 10px;
     }
